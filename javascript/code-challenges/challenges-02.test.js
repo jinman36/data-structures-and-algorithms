@@ -87,10 +87,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  return arr.map((n) => {
-    return n = Math.pow(2, n);
-  });
-
+  return arr.map((n) => Math.pow(2, n));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -227,7 +224,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  return arr.map(item => {
+    return {
+      name: item.stat.name,
+      total: item.effort + item.baseStat
+    };
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -328,7 +330,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
