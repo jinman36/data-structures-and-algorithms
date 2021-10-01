@@ -22,7 +22,11 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  let updatedAnimals = [];
+  arr.forEach((value) => {
+    updatedAnimals.push(callback(value));
+  });
+  return updatedAnimals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +97,11 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  var byPrice = arr.slice(0);
+  byPrice.sort(function(a,b) {
+    return a.price - b.price;
+  });
+  return byPrice;
 };
 
 /* ------------------------------------------------------------------------------------------------
