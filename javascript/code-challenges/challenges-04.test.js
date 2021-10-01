@@ -22,7 +22,11 @@ function lower(str) {
 }
 
 const updateAnimal = (arr, callback) => {
-  // Solution code here...
+  let updatedAnimals = [];
+  arr.forEach((value) => {
+    updatedAnimals.push(callback(value));
+  });
+  return updatedAnimals;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +97,11 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  var byPrice = arr.slice(0);
+  byPrice.sort(function(a,b) {
+    return a.price - b.price;
+  });
+  return byPrice;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,7 +113,7 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 ------------------------------------------------------------------------------------------------ */
 
 const alphabetizeBetter = (arr) => {
-  // Solution code here...
+  return arr.sort(Intl.Collator().compare);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -276,7 +284,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual([ 'alert', 'Alice', 'apple', 'Average' ]);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
