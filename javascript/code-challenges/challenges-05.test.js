@@ -60,7 +60,10 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let sumArray = arr.reduce((acc) => {
+    return acc = acc + 1;
+  }, 0);
+  return sumArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
