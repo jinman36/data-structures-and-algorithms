@@ -66,7 +66,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < str.length + 1; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -78,9 +80,7 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,7 +126,22 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let ingredientsOnly = recipe.ingredients;
+  ingredientsOnly.forEach((element) => {
+    let gallons = element.indexOf('gallons');
+    let pound = element.indexOf('pounds');
+    let medium = element.indexOf('medium-sized');
+    let cups = element.indexOf('cups');
+    if (pound > 0) {
+      result.push(element.slice(pound + 7));
+    } else if (gallons > 0) {
+      result.push(element.slice(gallons + 8));
+    } else if (medium > 0) {
+      result.push(element.slice(medium + 13));
+    } else if (cups > 0) {
+      result.push(element.slice(cups + 5));
+    }
+  });
   return result;
 };
 
