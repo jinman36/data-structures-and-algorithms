@@ -74,7 +74,13 @@ Write a function named containsW that takes in a string. This function should us
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-
+  let regex = /([w])/;
+  // let regexW = /[A_Z]/;
+  if (regex.test(str) === true) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
