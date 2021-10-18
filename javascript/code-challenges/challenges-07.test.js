@@ -126,20 +126,21 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  let ingredientsOnly = recipe.ingredients;
-  ingredientsOnly.forEach((element) => {
+  recipe.ingredients.forEach((element) => {
     let gallons = element.indexOf('gallons');
-    let pound = element.indexOf('pounds');
+    let pounds = element.indexOf('pounds');
     let medium = element.indexOf('medium-sized');
     let cups = element.indexOf('cups');
-    if (pound > 0) {
-      result.push(element.slice(pound + 7));
+    if (pounds > 0) {
+      result.push(element.slice(element.indexOf(' ', 2)).trim());
     } else if (gallons > 0) {
-      result.push(element.slice(gallons + 8));
+      result.push(element.slice(element.indexOf(' ', 2)).trim());
     } else if (medium > 0) {
-      result.push(element.slice(medium + 13));
+      result.push(element.slice(element.indexOf(' ', 2)).trim());
     } else if (cups > 0) {
-      result.push(element.slice(cups + 5));
+      result.push(element.slice(element.indexOf(' ', 3)).trim());
+    } else {
+      result.push(element.slice(element.indexOf(' ', 3)).trim());
     }
   });
   return result;
