@@ -8,9 +8,10 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
+  const splitArr = str.split('');
+  splitArr.splice(0, splitArr.length - 10);
+  return splitArr;
 }
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -26,7 +27,7 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
+  return Math.max(...matrix.map( e => Array.isArray(e) ? findMax(e) : e));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,9 +45,14 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  let sum = 0;
+  matrix.forEach(row => {
+    row.forEach(col => {
+      sum += col;
+    });
+  });
+  return sum;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
