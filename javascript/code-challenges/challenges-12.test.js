@@ -7,7 +7,9 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 ------------------------------------------------------------------------------------------------ */
 
 const replaceZeros = (string) => {
-  // Solution code here...
+  let regex = /0/g;
+  const newStr = string.replace(regex, 'zero');
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +21,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let reg = /^\d{4}$/;
+  return reg.test(pin)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,7 +34,8 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 ------------------------------------------------------------------------------------------------ */
 
 const validateWord = (word) => {
-  // Solution code here...
+  let reg = /^[A-z]{5,10}$/;
+  return reg.test(word);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +47,8 @@ If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const hasNumber = (string) => {
-  // Solution code here...
+  let reg = /[A-z][0-9]/;
+  return reg.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
