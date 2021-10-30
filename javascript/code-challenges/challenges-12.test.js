@@ -98,7 +98,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let regex = /^(\(\d{3}\))|\d{3}[- ]?[\w]/;
+  let regex = /^((\(\d{3}\))|(\d{3}))[ -]?\d{3}[- ]?\d{4}$/;
   return regex.test(phoneNumber);
 };
 
