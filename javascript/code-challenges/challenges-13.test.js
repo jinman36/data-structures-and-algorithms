@@ -31,12 +31,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  let happyFace = arr.includes(String.fromCharCode(58, 41));
-  arr.map(element => {
-    if (element.includes(happyFace)) {
-      return element;
-    }
-  });
+  return arr.filter(happy => happy.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,7 +43,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map(numbers => `${numbers.substring(1,4)}${numbers.substring(6,9)}${numbers.substring(10)}`);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +55,7 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((elem, idx) => idx % 2 === 1).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -70,7 +65,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(string => string.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
